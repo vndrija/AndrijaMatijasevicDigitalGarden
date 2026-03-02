@@ -1,11 +1,120 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import Carousel from "../components/Carousel.tsx";
+import { Icon } from "astro-icon/components";
+import Folder from "../components/Folder.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <div class="md:hidden mb-5">
+    <h1 class="text-5xl">Hi! My name is Andrija :)</h1>
+  </div>
+
+  <div class="flex flex-col gap-4 md:flex-row">
+    <div class="flex justify-center items-start">
+      <Carousel
+        client:load
+        images={[
+          {
+            src: "/src/assets/working.jpg",
+            alt: "working",
+            description: "working hard or hardly working",
+          },
+          {
+            src: "/src/assets/running2.JPG",
+            alt: "running",
+            description: "running",
+          },
+          {
+            src: "/src/assets/profile.jpg",
+            alt: "Me",
+            description: "me",
+          },
+          {
+            src: "/src/assets/MeOnMountainRtanj.jpg",
+            alt: "Me on mountain Rtanj",
+            description: "climbing mountains",
+          },
+        ]}
+      />
+    </div>
+    <div>
+      <div class="hidden md:block">
+        <h1 class="mb-5 text-5xl">Hi! My name is Andrija :)</h1>
+      </div>
+      <h2 class="text-3xl">Work</h2>
+      <p class="mb-5 text-xl text-gray-600">
+        I work as a Full Stack Software Developer at <a
+          href="https://sipodsoftware.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline decoration-1 decoration-black hover:decoration-2 text-black"
+          >Sipod</a
+        >
+      </p>
+      <h2 class="text-3xl">Education</h2>
+      <p class="mb-5 text-xl text-gray-600">
+        Finishing my Bachelor's degree in Software Engineering at the Faculty of
+        Technical Sciences in Novi Sad.
+      </p>
+      <h2 class="text-3xl">
+        An unordered list of things I like/I'm interested in
+      </h2>
+      <ul class="list-disc list-inside ml-5 text-gray-600 mb-5 text-xl">
+        <li>
+          <a
+            href="/coding"
+            class="underline decoration-1 decoration-black hover:decoration-2 text-black"
+            >coding</a>
+        </li>
+        <li>fitness</li>
+        <li>rock climbing</li>
+        <li>mountaineering and alpinism</li>
+        <li>photography</li>
+        <li>
+          <a
+            href="/writing"
+            class="underline decorat`ion-1 decoration-black hover:decoration-2 text-black"
+            >writing</a>
+        </li>
+        <li>investing</li>
+      </ul>
+      <h2 class="text-3xl">Socials</h2>
+      <div class="flex flex-row gap-3">
+        <a
+          href="mailto:andrija.matijasevic02@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1"
+        >
+          <Icon name="mdi:email-outline" class="w-6 h-6" />mail
+        </a>
+        <a
+          href="https://linkedin.com/in/andrija-matijasevic"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1"
+        >
+          <Icon name="mdi:linkedin" class="w-6 h-6" />linkedin
+        </a>
+        <a
+          href="https://github.com/vndrija"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1"
+        >
+          <Icon name="mdi:github" class="w-6 h-6" />github
+        </a>
+        <a
+          href="https://instagram.com/vndrija"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1"
+        >
+          <Icon name="mdi:instagram" class="w-6 h-6" />instagram
+        </a>
+      </div>
+    </div>
+  </div>
 </Layout>
