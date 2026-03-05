@@ -1,0 +1,32 @@
+---
+export interface Project {
+  title: string;
+  url: string;
+  description: string;
+  technologies: string
+}
+
+export const projectData: Project[] = [
+  {
+    title: "eGovernment",
+    url: "https://github.com/vndrija/eGovernment",
+    description: "Microservice system based on Euprava portal, rated the best project by professor in the class.",
+    technologies:
+      "(C#/ASP.NET Core, Angular, EF Core, SQL Server, Docker)",
+  },
+  {
+    title: "Canteen Reservation System - Hackathon Project",
+    url: "https://github.com/vndrija/5danaUOblacima",
+    description: "A RESTful API for managing student canteen reservations, achieved highest individual score in team hackathon project.",
+    technologies:
+      "(C#/ASP.NET Core, EF Core)",
+  },
+  {
+    title: "Uslužno košenje Lazarevac",
+    url: "https://www.usluznokosenjelazarevac.com",
+    description: "A website for a local lawn moving company, increased client engagement contributing to higher revenue for the business.",
+    technologies:
+      "(Next.js, TypeScript, Tailwind CSS, Vercel)",
+  },
+];
+---
